@@ -3,9 +3,9 @@ package com.organicboostpro.app
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     var balance = 0
     var orders = ArrayList<String>()
