@@ -1,17 +1,36 @@
-package com.organicboostpro.app
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+}
 
-import android.app.Activity
-import android.os.Bundle
-import android.view.Gravity
-import android.widget.TextView
+android {
+    namespace = "com.organicboostpro.app"
+    compileSdk = 34
 
-class MainActivity : Activity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val textView = TextView(this)
-        textView.text = "Organic Boost Pro\n\nWelcome!"
-        textView.textSize = 24f
-        textView.gravity = Gravity.CENTER
-        setContentView(textView)
+    defaultConfig {
+        applicationId = "com.organicboostpro.app"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
     }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
 }
